@@ -34,19 +34,7 @@
       </div>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-        <span class="menu-title">Sección de Pagos</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.create') }}">Registrar nuevo Pago</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Lista de Pagos</a></li>
-        </ul>
-      </div>
-    </li>
+    
 
   </ul>
 </nav>
