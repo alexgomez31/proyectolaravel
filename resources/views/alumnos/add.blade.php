@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Talla del Uniforme</label>
+                    <label class="col-sm-6 col-form-label">Telefono fijo</label>
                     <div class="col-sm-12">
                       <input type="number" name="talla_uniforme" class="form-control" />
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Teléfono</label>
+                    <label class="col-sm-6 col-form-label">Teléfono Movil</label>
                     <div class="col-sm-12">
                       <input type="number" name="phone_alumno" class="form-control"/>
                     </div>

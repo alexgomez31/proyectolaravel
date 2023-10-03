@@ -19,10 +19,7 @@
                 <label for="exampleInputUsername1">Nombre del Curso</label>
                 <input type="text" name="nombre_curso" class="form-control" value="{{ $curso->nombre_curso }}" required>
             </div>
-            <div class="form-group">
-                <label for="exampleInputUsername1">Valor del Curso</label>
-                <input type="number" name="precio_curso" class="form-control" value="{{ $curso->precio_curso }}" required>
-            </div>
+            
             <div class="form-group">
                 <label for="exampleInputUsername1">Fecha creación del Curso</label>
                 <input type="date" name="dateCurso" class="form-control" value="{{ $curso->dateCurso }}" required>
@@ -61,15 +58,7 @@
                 </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="exampleInputUsername1">Valor del Curso</label>
-                <input type="number" name="precio_curso" class="form-control" required>
-                @if ($errors->has('precio_curso'))
-                <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('precio_curso') }}</span>
-                </div>
-                @endif
-            </div>
+            
             <div class="form-group">
                 <label for="exampleInputUsername1">Fecha creación del Curso</label>
                 <input type="date" name="dateCurso" class="form-control" required>
