@@ -29,6 +29,14 @@ Route::get('/NewPassword',  [SettingsController::class,'NewPassword'])->name('Ne
 Route::post('/change/password',  [SettingsController::class,'changePassword'])->name('changePassword');
 
 
+// routes/web.php
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+
+
 Route::get('/clear-cache', function () {
     echo Artisan::call('config:clear');
     echo Artisan::call('config:cache');

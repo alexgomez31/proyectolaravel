@@ -39,11 +39,14 @@
 
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
-                                    {{ __('ENTRAR') }}
+                                    {{ __('Entrar') }}
                                 </button>
                             </div>
                             <div class="text-center mt-4 font-weight-light">
-                   <a href="/register" class="text-primary">Registrarse</a>
+                              
+                   <a href="/register" class="btn btn-outline-success">Registrarse</a>
+
+                   <a href="/email" class="btn btn-outline-danger">¿Olvidó su contraseña?</a>
                 </div>
 
               </form>
