@@ -8651,6 +8651,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 body {
+  background-image: url(../imagenes/pexels-max-fischer-5212338.jpg) !important;
+  background-size: cover !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -8658,7 +8660,6 @@ body {
   line-height: 1.5;
   color: #000;
   text-align: left;
-  background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -9026,7 +9027,7 @@ small,
 mark,
 .mark {
   padding: 0.2em;
-  background-color: #fcf8e3;
+  /* background-color: #fcf8e3; */
 }
 
 .list-unstyled {
@@ -21829,5 +21830,3 @@ dl li {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-
-/*# sourceMappingURL=maps/style.css.map */

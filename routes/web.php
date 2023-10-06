@@ -3,8 +3,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\AlumnosController;
-
-use App\Http\Controllers\SettingsController; 
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\UserController; 
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +18,10 @@ Route::resource('curso', CursosController::class)->middleware('auth');
 Route::resource('profe', ProfesoresController::class)->middleware('auth');
 Route::resource('alumno', AlumnosController::class)->middleware('auth');
 
-
+//usuarios
+Route::resource('perfil', UserController::class)->middleware('auth');
+Route::get('/vista',  [UserController::class,'vista'])->name('vista')->middleware('auth');
+Route::put('/actualizar', [UserController::class,'actualizar'])->name('actualizar')->middleware('auth');
 
 
 Route::get('excel/exportAlumnos', 'App\Http\Controllers\AlumnosController@exportAlumnos')->name("exportAlumnos")->middleware('auth');
