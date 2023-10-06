@@ -87,7 +87,7 @@ $user = auth()->user();
 
 
 
-                    /*
+            
             $pagosCurso = DB::table('pagos')->sum('aporte')
             ->where("alumno_id",$request->alumno_id);
 
@@ -100,15 +100,15 @@ $user = auth()->user();
                     ->groupBy("id")
                     ->having('total', '>', 50)
                     ->get();
-                */
+                
             
 
 <?php
-      /*  $("select[name='alumno_idx']").change(function(){
+      $("select[name='alumno_idx']").change(function(){
       var alumno_id = $(this).val();
       $.ajax({
-          //url:"{{ route('pago.store') }}",
-         //url: "{{ route('admin.cities.get_by_country') }}?country_id=" + $(this).val(),
+          url:"{{ route('pago.store') }}",
+         url: "{{ route('admin.cities.get_by_country') }}?country_id=" + $(this).val(),
           url: "<?php echo route('pago.store') ?>",
           method: 'POST',
           dataType: 'json',
@@ -117,41 +117,40 @@ $user = auth()->user();
             $("#resp").html(data.options);
           }
       });
-  }); */
+  });
 
             
-           /* $countries = DB::table('countries')
+            $countries = DB::table('countries')
             ->get();
         return view('dropdown', compact('countries'));
 
         $categoris = Category::where('parent_id',0)->get();
-        return view('welcome',["categoris" => $categoris]);*/
+        return view('welcome',["categoris" => $categoris]);
 
-        /*
+        
         $states = DB::table('states')->whereCountryId($request->country_id)->get();
         return response()->json($states);
-        */
-        /*
+        
         $cities = DB::table('cities')->whereStateId($request->state_id)->get();
         return response()->json($cities);
-        */
-            /*
+        
+            
                $states = DB::table("teachers")
                 ->where("nation_id",$id)
                 ->pluck("teacher_name","teacher_id");
                 return response()->json($teachers);  
-            */
-          /*  $states = DB::table('states')->where('id_country',$request->id_country)->pluck("name","id")->all();
+            
+           $states = DB::table('states')->where('id_country',$request->id_country)->pluck("name","id")->all();
     		$data = view('ajax-select',compact('states'))->render();
-    		return response()->json(['options'=>$data]);*/
+    		return response()->json(['options'=>$data]);
 
-            //$alumno = Alumnos::findOrFail($id);
-           // return view('pagos.add', compact('alumno'));
+            $alumno = Alumnos::findOrFail($id);
+           return view('pagos.add', compact('alumno'));
             dd($request->all());
-            /*return response()->json([
+            return response()->json([
                 'mensaje'=> '<p>' .$request->all().'</p>'
-            ]);  */
-        }
+            ]); 
+        
 
         $affected = DB::table('users')
               ->where('id', 1)
@@ -171,25 +170,22 @@ $user = auth()->user();
             ->update(array('dtime' => 1398082265));
 
 
-            /*
+            
             DB::table('posts')
                 ->select('postTitle', 'postBody')
                 ->whereRaw('id =' . $id)->first(); 
-            */
-            /*
+            
                     $users = User::select("*")
                         ->where([
                             ["status", "=", 1],
                             ["email", "=", "yemmerich@example.net"]
                         ])
                         ->get();
-                        */
-                /*
+                     
                 DB::table('posts')
                     ->select('postTitle', 'postBody')
                     ->whereRaw('id = ?', $id)->first();
-                */
-    
+               
             
         $last = DB::table('items')->latest()->first();
         $last2 = DB::table('items')->orderBy('id', 'DESC')->first();
@@ -200,8 +196,8 @@ $user = auth()->user();
              $cursosTable = Cursos::orderBy('id', 'DESC')->paginate(5);
              $mensajeUpdateCurso ="Curso actualizado Correctamente.";
              return redirect('curso')->with(['cursosTable' => $cursosTable, 'mensajeUpdateCurso' => $mensajeUpdateCurso]);
-             //return redirect()->route( 'clients.show' )->with( [ 'id' => $id ] );
-             //return Redirect::route('clients.show, $id')
-             //return redirect()->route('clients.show')->with([ 'id' => $id ]);
-             //return Redirect::route('clients.show, $id')->with( ['data' => $data] );
-             //return redirect()->back();
+             return redirect()->route( 'clients.show' )->with( [ 'id' => $id ] );
+             return Redirect::route('clients.show, $id')
+             return redirect()->route('clients.show')->with([ 'id' => $id ]);
+             return Redirect::route('clients.show, $id')->with( ['data' => $data] );
+             return redirect()->back();
